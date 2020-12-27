@@ -86,3 +86,20 @@
 
 {% block shipping_method %}{% endblock %}
 {% block payment_method %}{% endblock %}
+
+{% block extrascripts %}
+    <script>
+        $(document).ready(function () {
+            $('#id_postcode').keyup(function (event) {
+                addHyphen (this);
+            });
+        });
+
+        function addHyphen (element) {
+            let val = $(element).val().split('-').join('');   // Remove dash (-) if mistakenly entered.
+
+            let finalVal = val.match(/.{1,5}/g).join('-');    // Add (-) after 3rd every char.
+            $(element).val(finalVal);		// Update the input box.
+        }
+    </script>
+{% endblock %}

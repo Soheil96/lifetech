@@ -15,7 +15,7 @@
             </a>
         </div>
 
-        <a class="btn btn-default navbar-btn btn-cart navbar-right visible-xs-inline-block" href="{% url 'basket:summary' %}">
+        <a class="btn btn-default navbar-btn btn-cart navbar-left visible-xs-inline-block" href="{% url 'basket:summary' %}">
             <i class="icon-shopping-cart"></i>
             {% trans "Basket" %}
             {% if not request.basket.is_empty %}
@@ -34,7 +34,7 @@
 
         <div class="navbar-collapse primary-collapse collapse">
             {% block nav_dropdown %}
-                <ul id="browse" class="nav navbar-nav">
+                <ul id="browse" class="nav navbar-nav navbar-right">
                     <li class="dropdown active {% if expand_dropdown %}open{% endif %}">
                         <a href="#" class="dropdown-toggle" {% if not expand_dropdown %} data-toggle="dropdown"{% endif %}>
                             {% trans "Browse store" %}

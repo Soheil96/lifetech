@@ -1,0 +1,37 @@
+{% load static %}
+<div class="col-sm-12 h1">
+    <a href="{{ homepage_url }}">
+        <img src="{% static 'oscar/main_banner.jpg' %}" id="adBanner" alt="ad banner" style="width: 100%">
+    </a>
+</div>
+
+{% block scripts %}
+    <script>
+        window.onload = rotate;
+
+        let theAd = -1;
+        let adURL = ["negrino.com","sun.com","microsoft.com"];
+        let adImages = ["{% static 'oscar/main_banner.jpg' %}","{% static 'oscar/xiaomi_banner.jpg' %}","{% static 'oscar/tp-link_banner.jpg' %}"];
+
+        function initBannerLink() {
+             if (document.getElementById("adBanner").parentNode.tagName === "A") {
+                document.getElementById("adBanner").parentNode.onclick = newLocation;
+             }
+             rotate();
+        }
+
+        function newLocation() {
+             document.location.href = "http://www." + adURL[theAd];
+             return false;
+        }
+
+        function rotate() {
+             theAd++;
+             if (theAd === adImages.length) {
+                theAd = 0;
+             }
+             document.getElementById("adBanner").src = adImages[theAd];
+             setTimeout(rotate, 10 * 1000);
+        }
+    </script>
+{% endblock %}

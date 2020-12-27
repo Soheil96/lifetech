@@ -26,6 +26,9 @@
                 {# Mini-basket wrapped in a block so some templates can now display it #}
                 {% include "oscar/partials/brand.html" %}
             </div>
+            <div class="row">
+                {% include "oscar/partials/ad_banner.html" %}
+            </div>
         </div>
         {% block navigation %}
             {% include "oscar/partials/nav_primary.html" %}
