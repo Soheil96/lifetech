@@ -20,7 +20,7 @@
 
     {# Site logo/title, mini-basket, browse dropdown and searchbox #}
     <header class="header container-fluid">
-        <div class="page_inner">
+        <div class="page_inner header">
             <div class="row">
 
                 {# Mini-basket wrapped in a block so some templates can now display it #}
@@ -28,6 +28,9 @@
             </div>
             <div class="row">
                 {% include "oscar/partials/ad_banner.html" %}
+            </div>
+            <div class="row">
+                {% include 'oscar/partials/discount_bar.html' %}
             </div>
         </div>
         {% block navigation %}

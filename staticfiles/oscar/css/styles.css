@@ -5064,7 +5064,7 @@ a.badge:focus {
   margin-bottom: 20px;
   line-height: 1.42857143;
   background-color: #fff;
-  border: 1px solid #ddd;
+  border: 1px solid transparent;
   border-radius: 4px;
   -webkit-transition: border 0.2s ease-in-out;
   -o-transition: border 0.2s ease-in-out;
@@ -7994,6 +7994,9 @@ body {
 .page_inner {
   padding: 30px;
 }
+.page_inner.header {
+  padding: 0px;
+}
 .page_inner:before,
 .page_inner:after {
   display: table;
@@ -8257,6 +8260,14 @@ ul.row {
   text-align: center;
   margin: 20px 0;
   position: relative;
+  border: 1px solid transparent;
+}
+.normal_product:hover {
+  margin-top: -10px;
+  #border: 1px solid ghostwhite;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 105, 214, 0.25);
+  box-shadow: 0 1px 3px rgba(0, 105, 214, 0.25);
+  border-radius: 15px;
 }
 .product_pod p,
 .product_pod h3,
@@ -8336,9 +8347,9 @@ ul.row {
   margin: 0px auto;
 }
 a:hover .thumbnail {
-  border-color: #337ab7;
-  -webkit-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
-  box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+  #border-color: #337ab7;
+  #-webkit-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+  #box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
 }
 .availability.outofstock {
   color: #d9534f;
@@ -8487,19 +8498,19 @@ a:hover .thumbnail {
 .star-rating a {
   margin-left: 10px;
 }
-.star-rating.One i:first-child {
+.star-rating.One i:first-child + i + i + i + i{
   color: #E6CE31;
 }
-.star-rating.Two i:first-child,
-.star-rating.Two i:first-child + i {
+.star-rating.Two i:first-child + i + i + i + i,
+.star-rating.Two i:first-child + i + i + i{
   color: #E6CE31;
 }
-.star-rating.Three i:first-child,
-.star-rating.Three i:first-child + i,
-.star-rating.Three i:first-child + i + i {
+.star-rating.Three i:first-child + i + i + i + i,
+.star-rating.Three i:first-child + i + i,
+.star-rating.Three i:first-child + i + i + i{
   color: #E6CE31;
 }
-.star-rating.Four i:first-child,
+.star-rating.Four i:first-child + i + i + i + i,
 .star-rating.Four i:first-child + i,
 .star-rating.Four i:first-child + i + i,
 .star-rating.Four i:first-child + i + i + i {
@@ -9054,4 +9065,10 @@ a:visited {
 }
 a:active {
   text-decoration: none;
+}
+
+.discount {
+  background-color: white;
+  margin: 15px;
+  border-radius: 25px;
 }

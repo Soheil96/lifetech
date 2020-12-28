@@ -4,7 +4,7 @@
 
 <div class="navbar primary navbar-static-top navbar-inverse">
     <div class="container-fluid">
-        <div class="navbar-header pull-right">
+        <div class="navbar-header pull-left">
             {# This is used in mobile view #}
             <a class="btn btn-default navbar-toggle collapsed" data-toggle="collapse" data-target=".primary-collapse">
                 <span>
@@ -15,7 +15,7 @@
             </a>
         </div>
 
-        <a class="btn btn-default navbar-btn btn-cart navbar-left visible-xs-inline-block" href="{% url 'basket:summary' %}">
+        <a class="btn btn-default navbar-btn btn-cart navbar-right visible-xs-inline-block" href="{% url 'basket:summary' %}">
             <i class="icon-shopping-cart"></i>
             {% trans "Basket" %}
             {% if not request.basket.is_empty %}
